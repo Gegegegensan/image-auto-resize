@@ -42,10 +42,8 @@ def resize():
         img = imread(file)
         print(filename, "image loaded.")
         print("image wh", img.shape[0], img.shape[1])
-        img2 = cv2.resize(img, dsize=(1500, 1500))
-        #filename = os.path.split(f)[1]
-        #imwrite(path1 + str(counter) + '.jpg', img2)
-        quality = 60
+        img2 = cv2.resize(img, dsize=(1500, 1500)) # width and height. Feel free to change the numbers
+        quality = 60 # the image quality
         encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), quality]
         imwrite(path1 + filename, img2, encode_param)
         print (filename + " converted.")
